@@ -1,20 +1,22 @@
-*{ margin:0; padding: 0;}
+/*ESTILOS DE TODOS LOS HTML*/
+*{ margin:0; padding: 0;font-family: Calibri;}
 body{
-    background: #fffffa;
-    font-family: Tw Cen MT; 
+    background: black ;
+     
 }
 
 header{
     width: 100%;
     overflow: hidden;
-    background: #2900E3 ; 
+    background: rgba(1, 17, 138,0.9); 
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
-.wrapper {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
+.fondo {
+    background-color: black;
+    background-image: url(img/pasillo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .wrapp {
     width: 90%;
@@ -25,18 +27,20 @@ header{
 header .logotipo{
     color: #fffffa;
     font-size: 50px; 
-    line-height: 150px;
+   line-height: 150px;
     float: left;
+    margin-top: 25px;
+    margin-bottom: 0px;
 }
 header nav{
     float: right;
-    line-height: 150px;
+   line-height: 150px;
 
 
 }
 header nav a{
     display: inline-block;
-    color: white;
+    color:white;
     text-decoration: none;
     padding: 10px 20px;
     line-height:  normal;
@@ -48,10 +52,19 @@ header nav a{
     transition: all 500ms ease;
 }
 header nav a:hover{
-    background: gold;
+    background: #ffc90e;
     border-radius: 50px;
-    color: black;
+    color:black;
 
+}
+
+
+/*ESTILOS DEL INDEX */
+.contenido{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
 }
 
  article{
@@ -59,9 +72,55 @@ header nav a:hover{
     margin-right: 1.5%;
     float: left;
     margin-bottom: 20px;
-    padding: 20px
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85)
 }
-img{
-    float:right;
-    
+
+/*ESTILOS DEL LOGIN */
+#formulario{
+   background-color: rgba(255, 255, 255, 0.9);
+   margin-left: auto;
+   margin-right: auto;
+   overflow: hidden;
+   width: 28%;
+   height: 430px;
+   font-family: Tw Cen MT;
+   padding: 20px 20px 20px 20px;
+   box-sizing: border-box; /*Con esto se deberia respetar los margenes del*/
+   border-radius: 10px;
+}
+
+input{
+    background-color: rgb(167, 163, 163);
+    width: 100%;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-buttom: 20px;
+}
+
+.olvidado{
+    margin-top: 100px;
+    margin-buttom: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.boton{
+background-color: #ffc90e;
+width: 100%;
+height: 30px;
+color: black;
+margin-top: auto;
+font-size: 20px;
+border: 0;
+border-radius: 5px;
+padding: 25px
+box-sizing: border-box;
+margin-top: 135px;
+margin-buttom: 20px;
+font-weight:bold;
 }
