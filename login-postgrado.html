@@ -5,34 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 </head>
 <body class="fondo">
     <header> 
-        <div class="wrapp">
-           <div class="logotipo"> 
-             <img src="img\logo-blanco.PNG" width="150" alt="Not Found">       
-           </div>
-            <nav>      
-                <a href="index.html">Pagina Principal</a>
-                <a href="login.html">Primer Ingreso</a>
-                <a href="login-postgrado.html">Sistema de Pregrado</a>
-                <a href="login-maestro.html">Administracion</a>
-            </nav>
-         </div>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"><img src="img/logo-unah.png" width="150"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Página Principal</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Primer Ingreso</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login-postgrado.html">Sistema de Pregrado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login-maestro.html">Administración</a>
+                </li>
+              </ul>
+          </nav>
     </header>
 
     <div id="formulario">
-        <h1>Area de Postgrado </h1>
-       
-        <input type="text"placeholder="Numero de cuenta o correo institucional" >
-        <input type="password" placeholder="Contrasena">
-        <br>
-        <br>
-        <a href="#"  class="olvidado" >Olvidaste tu cuenta?</a><br>
-        <a href="#"  class="olvidado" >Registrate</a>
-        <button type="button" class="boton">Ingresar</button>
-    </div>
+      <h1>Area de Postgrado </h1>
+     
+      <input type="text"placeholder="Numero de cuenta o correo institucional" >
+      <input type="password" placeholder="Contrasena">
+      <br>
+      <br>
+      <a href="#"  class="olvidado" >Olvidaste tu cuenta?</a><br>
+      <a href="#"  class="olvidado" >Registrate</a>
+      <button type="button" class="boton">Ingresar</button>
+  </div>
+  
 </body>
 </html>
