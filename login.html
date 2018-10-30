@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
 
 </head>
 <body>
@@ -34,16 +34,21 @@
           </nav>
     </header>
 
-      <div id="formulario">
-        <h1>Estudiante: </h1>
-        <input type="text"placeholder="Numero de cuenta o correo institucional" >
-        <input type="password" placeholder="Contrasena">
-        <br>
-        <br>
-        <a href="#"  class="olvidado" >Olvidaste tu cuenta?</a><br>
-        <a href="#"  class="olvidado" >Registrate</a>
-        <button type="button" class="boton">Ingresar</button>
-      </div>
-      
+    <body class="text-center">
+      <form class="form-signin">
+        <img class="mb-4 rounded-circle" src="" alt="">
+        <h1 class="h3 mb-3 font-weight-normal">Estudiante</h1>
+        <label for="inputEmail" class="sr-only">Account number</label>
+        <input type="text" id="inputText" class="form-control" placeholder="No.Cuenta" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Clave" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordarme
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      </form>  
 </body>
 </html>

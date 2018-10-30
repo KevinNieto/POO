@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
 </head>
 <body class="fondo">
     <header> 
@@ -34,23 +34,34 @@
           </nav>
     </header>
 
-    <div id="formulario">
-      <h1>Personal Administrativo: </h1>
-     
-      <select>
+    <body class="text-center">
+      <form class="form-signin">
+        <img class="mb-4 rounded-circle" src="" alt="">
+        <h1 class="h3 mb-3 font-weight-normal">Area Administrativa</h1>
+        <select>
           <option value="-">Seleccione un cargo</option>
           <option value="1">Docente</option>
           <option value="3">Coordinador de clase</option>
           <option value="2">Director de carrera</option>
           <option value="4">Decano</option>
       </select>
-      <input type="text"placeholder="Numero de cuenta o correo institucional" >
-      <input type="password" placeholder="Contrasena">
-      <br>
-      <br>
-      <a href="#"  class="olvidado" >Olvidaste tu cuenta?</a><br>
-      <button type="button" class="btn">Ingresar</button>
-  </div>
+        <label for="inputEmail" class="sr-only">Account number</label>
+        <input type="text" id="inputText" class="form-control" placeholder="No.Cuenta" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Clave" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordarme
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      </form>  
+      
+    
+    
+  
+  
       
 </body>
 </html>
