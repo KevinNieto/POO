@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href= "../../img/logo.ico">
+
+    <title>DIPP</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  
+  <body>
+  <?php include("../Estructuras-utiles/header.html");?>
+    
+
+    <main role="main">
+<!--INICIO DEL CARRUSEL-->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="../img/ejemplo1.jpg" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left" >
+                <h1>Example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+             
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="second-slide" src="../img/pasillo.jpg" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide" src="../img/ejemplo4.jpg" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+<!--INICIO DEL CONTENIDO-->
+<div class="container marketing">
+
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+      <img class="rounded-circle" src="img/biology.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Cupos de Medicina</h2>
+      
+      <p><a class="btn btn-secondary color-boton" href="#" role="button">Ver tabla actualizada &raquo;</a></p>
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-sm-6">
+      <img class="rounded-circle" src="img/biology.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Cupos de Microbiologia </h2>
+      <p><a class="btn btn-secondary color-boton" href="#" role="button">Ver tabla actualizada &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-3 col-sm-6">
+      <img class="rounded-circle" src="img/biology.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Cupos de Nutricion </h2>
+      <p><a class="btn btn-secondary color-boton" href="#" role="button">Ver tabla actualizada &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-3 col-sm-6">
+      <img class="rounded-circle" src="img/biology.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Cupos de Arquitectura</h2>
+     <p><a class="btn btn-secondary color-boton" href="#" role="button">Ver tabla actualizada &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <div class="row mb-2">
+<!--PROCESO DE IDENTIFICACION-->
+    <div class="col-md-6">
+      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="card-body d-flex flex-column align-items-start">
+           <h3 class="mb-0">
+            <a class="text-dark" href="#">Proceso de Identificacion Estudiantil</a>
+          </h3>
+          <a href="#">Ver Calendario</a>
+        </div>
+        <div class= "col-6" id="aviso2">
+        </div>
+      </div>
+    </div>
+<!--Pago matricula-->
+    <div class="col-md-6">
+      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="card-body d-flex flex-column align-items-start col-6">
+          <h3 class="mb-0">
+            <a class="text-dark" href="#">Aviso pago de matricula </a>
+          </h3>
+          <a href="#">Ver Aviso</a>
+        </div>
+        <div class= "col-6" id="aviso1">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <!--Suficiencias-->
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+               <h3 class="mb-0">
+                <a class="text-dark" href="#">Suficiencias III Periodo Academico</a>
+              </h3>
+              <a href="#">Descargar imagen</a>
+            </div>
+            <div class= "col-6" id="aviso3">
+            </div>
+          </div>
+        </div>
+    <!--Pago de lab-->
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start col-6">
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">Aviso pago del laboratorio </a>
+              </h3>
+              <a href="#">Ver Aviso</a>
+            </div>
+            <div class= "col-6" id="aviso4">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+  </body>
+</html>
