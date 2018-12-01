@@ -14,15 +14,19 @@
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 32rem;
+  height: 25rem;
   background-color: #777;
+  margin-bottom: 10px;
 }
 .carousel-item > img {
   position: absolute;
+  background-image: cover;
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 32rem;
+  height: 25rem;
+  width: 400px;
+  
 }
 
 
@@ -217,5 +221,25 @@ header{
   height: 150px;*/
   background-color: black;
 }
-
-
+#imglogins{
+  background-image: url(../img/pruebas.jpg);background-repeat: no-repeat; background-size:cover;width: 100%;height:400px; margin-left: 25px;
+}
+#formulario{
+  margin-bottom: 20px;
+}
+.cuadritos-positivos{
+  border-radius: 50%;
+  padding: 80px;
+  background-color: #ffc90e;
+  margin-top: 20px;
+}
+#cuadrito2{
+  margin-left: auto;
+}
+#cuadrito1{
+  margin-right: auto;
+}
+#cuadrito3{
+  margin-left: auto;
+  margin-right: auto;
+}
