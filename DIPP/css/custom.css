@@ -257,3 +257,26 @@ th{
 #foto-forma{
   background-image: url(../img/img-form.jpg);background-repeat: no-repeat; background-size:cover; height: 100px;
 }
+div #negro{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+div #dialogo{
+  position: absolute;
+  top: 50% ;
+  left: 50;
+  margin-left: -150px;
+  margin-top: 200px;
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+}
+div #dialogo p{
+  padding: 10px;
+  font-size: 1.2en;
+  text-align: center;
+}

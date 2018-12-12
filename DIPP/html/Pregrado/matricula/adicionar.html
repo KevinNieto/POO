@@ -41,8 +41,30 @@
   </nav>
   </header>
     <main>
-    <h3>FORMA 03</h3>
-    <h4>Clases matriculadas</h4>
+    <h3>Adicionar clases:</h3>
+    
+        <div class="row">
+            <div class="col-3">
+                <select class="form-control" id="slc-usuario">
+                    <option value="">Esto lo trae el servidor</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="slc-usuario">
+                        <option value="">Esto tambien</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-control" id="slc-usuario">
+                        <option value="">Esto tambien x2</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-3" style="margin-left:auto">    
+                    <button class="btn btn-lg btn-primary btn-block color-boton" id="btn-cancelar" type="submit" >Adicionar aignatura</button>
+                </div>
+            </div>
         <div class="row">
             <div class="col-2" style=" background-image: url(../../../img/img-form.jpg);background-repeat: no-repeat; background-size:150px; height: 180px;">
             </div>
@@ -102,31 +124,10 @@
                   </tr>
             </table>
         </div>
-        <div class="row">
-            <h6>LABORATORIOS MATRICULADOS</h6>
-        </div>
-        <div class="row">
-            <table border="10" class="col-12" style="border:none">
-                
-                <tr>
-                    <th>Cod.</th>
-                    <th>Asignatura</th> 
-                    <th>Seccion</th>
-                    <th>HI</th>
-                    <th>HF</th>
-                    <th>Dias</th>
-                    <th>Edificio</th>
-                    <th>Aula</th>
-                    <th>UV</th>
-                    <th>Periodo</th>
-                    
-                  </tr>
-            </table>
-        </div>
+        
 
         
     </main>
     <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
 </body>
-
