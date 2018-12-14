@@ -88,6 +88,10 @@
   margin-right: auto;
 }
 
+.aladerecha{
+  margin-left: auto;
+}
+
 
 
 /*TODO ESTO LO OCUPO PARA EL HEADER*/
@@ -263,17 +267,11 @@ div #negro{
   height: 100%;
   background-color: rgba(0,0,0,.5);
 }
-div #dialogo{
+#cuadrito-de-solicitud{
   position: absolute;
   top: 50% ;
   left: 50;
-  margin-left: -150px;
-  margin-top: 200px;
-  width: 300px;
-  height: 100px;
-  background-color: white;
-  border-radius: 10px;
-  border: none;
+  
 }
 div #dialogo p{
   padding: 10px;
