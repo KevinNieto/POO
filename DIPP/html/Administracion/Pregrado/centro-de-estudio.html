@@ -1,17 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href= "../../../img/logo.ico">
 
-    <title>Matricula</title>
+    <title>Creacion de Centro</title>
 
     <link href="../../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../../css/custom.css" rel="stylesheet">
-
+    
     
 </head>
-<body style="padding: 7rem;">
+<body style="padding: 7rem; background-color: white!important">
     <header>
         <!--INICIO DE LA BARRA DE NAVEGACION-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -38,7 +39,7 @@
                     <h6>Nombre de la persona</h6>
                   </div>
               </div>
-    
+  
                 <a class="dropdown-item" href="">Cambiar Contraseña</a>
     
                 <a class="dropdown-item" href="">Cerrar Session</a>
@@ -50,55 +51,36 @@
       </nav>
     </header>
     <main>
-    <h3>ESTADO DE CUENTA</h3>
-    <h4>Detalles de pago</h4>
         <div class="row">
-            <div class="col-2" style=" background-image: url(../../../img/img-form.jpg);background-repeat: no-repeat; background-size:150px; height: 180px;">
-            </div>
-            <div class="col-6">
-                <p><b>Cuenta:</b> 20161003263  </p>
-                <p><b>Nombre:</b> Kevin Alexis Nieto</p>
-                <p><b>Carrera:</b> Ingenieria en Sistemas</p>
-            </div>
-            <div class="col-4">
-              <p><b>Centro:</b> Ciudad Universitaria</p>
-              <p><b>Año:</b> 2018</p>
-            </div>
+        <div class="col-lg-6 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
+            <h1>Creacion de Centro de Estudio</h1>
+            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre del Centro" required autofocus style="margin-bottom: 10px;">
+            <input type="password" id="inputPassword formulario" class="form-control" placeholder="Ubicacion del centro" required style="margin-bottom: 10px;">              
+            <p>Descripcion:</p>
+            <textarea name="soli" id="" cols="78" rows="10" style="margin-bottom:15px;"></textarea>
+            <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" data-toggle="modal" data-target="#exampleModal">Enviar</button>
         </div>
-        
-        <div class="row">
-            <table border="10" class="col-12" style="border:none">
-                
-                <tr>
-                    <th>Descripcion</th>
-                    <th>Valor</th> 
-                    <th>Pago</th>
-                    <th>Banco</th>
-                    
-                    
-                  </tr>
-                  <tr>
-                    <td>Matricula</td>
-                    <td>L.270.00</td> 
-                    <td>NO</td>
-                    <td>SI</td>
-                    
-                    
-                  </tr>
-                  <tr>  
-                    <td>Reposicion</td>
-                    <td>L.100.00</td> 
-                    <td>NO</td>
-                    <td>SI</td>
-
-                  </tr>
-            </table>
-        </div>
-       
-
-        
+     </div>
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">DIPP</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estas seguro que deseas crear en el sistema este centro de estudio?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Atras</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>  
     </main>
-    <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
 </body>
-

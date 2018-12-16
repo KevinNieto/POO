@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href= "../../img/logo.ico">
+
+    <title>Matricula</title>
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Pregrado/custom-estudiantes.css">
+
+    
+</head>
+<body style="padding: 7rem;">
+    <header>
+        <!--INICIO DE LA BARRA DE NAVEGACION-->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--Logo-->
+          <a class="navbar-brand" id="el-logo" href="index.html" ><img src="../../img/logo-unah.png" width="120"></a>
+       
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+       <div class="centrado">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../../index.html">Pagina Principal <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../logins/login-pregrado.html">Sistema de pregrado <span class="sr-only">(current)</span></a>
+            </li><li class="nav-item active">
+              <a class="nav-link" href="index-postgrado.html">Sistema de postgrado  <span class="sr-only">(current)</span></a>
+            </li><li class="nav-item active">
+              <a class="nav-link" href="../logins/login-adm.html">Administracion  <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          </div>  
+        </div>
+      </nav>
+      </header>
+
+
+
+    <main>
+      <div class="row" id="cuadrito-form">
+        <div class="col-lg-5 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
+            <h3>Solicitud de Ingreso a Estudios de  Postgrado</h3>
+            <select  class= "form-control" styles="margin-bottom 10px;" name="centros" id="">                            
+                <option value="1">Selecione un centro de estudio</option>
+                <option value="2">Tegucigalpa</option>
+                <option value="3">San Pedro Sula</option>
+                <option value="4">Comayagua</option>
+                <option value="5">Ceiba </option>
+                <option value="6">Choluteca</option>
+                <option value="7">Olancho</option>
+            </select>
+            <select  class= "form-control" name="maestria" id="">
+                <option value="1">Carreras por centro, SRVDOR</option>
+                
+            </select>
+            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre Completo" required autofocus style="margin-bottom: 10px;">
+            <input type="password" id="inputPassword formulario" class="form-control" placeholder="Carrera de Pregrado" required style="margin-bottom: 10px;">              
+            <input type="password" id="inputPassword formulario" class="form-control" placeholder="Identidad" required style="margin-bottom: 10px;" name="soli" id="" cols="78" rows="10" style="margin-bottom:15px;"></textarea>
+            <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-otro"  type="submit">Enviar</button>
+            
+        </div>
+     </div>   
+    </main>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+</body>

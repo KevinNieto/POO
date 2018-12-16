@@ -18,16 +18,26 @@
     
  }
  body{
-    background-image: url(../../img/pasillo.jpg);
+    background-image: url(../../img/prueba1.png);
     background-repeat: no-repeat;
     background-size:cover;
  }
  h3{
     background-color: #ffc90e  !important;
-    margin-left: auto!important;
-    margin-right: auto!important;
+    margin-left:100px;
+    margin-right: 100px;
   
     padding: 10px;
     border-radius: 5px;
   }
-
+  #cuadrito-form{
+     background-color: white;
+  }
+.form-control{
+   margin-bottom: 15px;
+}
+#btn-otro{
+   background-color: rgba(0, 0, 122,0.94) !important;
+   color: white!important;
+   border: none;
+ }
