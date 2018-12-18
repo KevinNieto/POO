@@ -1,3 +1,8 @@
+<?php 
+    session_start();  
+    if (!isset($_SESSION["usuario"]))
+        header("Location: no-autorizado.html");//Redireccion con PHP
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,13 +41,11 @@
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6>Nombre de la persona</h6>
+                    <h6> <?php echo $_SESSION["nombre"];?></h6>
                   </div>
               </div>
-  
-                <a class="dropdown-item" href="">Cambiar Contraseña</a>
-    
-                <a class="dropdown-item" href="">Cerrar Session</a>
+
+                <a class="dropdown-item" href="../../../ajax/cerrar-sesion.php">Cerrar Sesion</a>
               </div>
             </li>
           </ul>
@@ -52,16 +55,11 @@
     </header>
     <main>
     <h3>Bienvenido a Area de Personal Administrativo</h3>
-        <div class="container-fluid" style="margin-left:100px;">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="creacion-maestro.html">Crear Maestro</a></div>
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="creacion-programa.html">Crear Programa de estudio</a></div>
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="../Pregrado/ajustes-pregrado.php">Area de Pregrado</a></div>
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="../Postgrado/ajustes-postgrado.php">Area de Postgrado</a></div>
             </div>
-            <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" ><a href="creacion-estudiante.html">Crear Estudiante</a></div>
-
-            </div>
-            
         </div>
     </main>
     <script src="../../../js/jquery-3.3.1.min.js"></script>

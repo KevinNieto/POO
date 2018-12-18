@@ -1,3 +1,8 @@
+<?php 
+    session_start();  
+    if (!isset($_SESSION["usuario"]))
+        header("Location: no-autorizado.html");//Redireccion con PHP
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +18,7 @@
     
 </head>
 <body style="padding: 7rem; background-color: white!important">
-    <header>
+<header>
         <!--INICIO DE LA BARRA DE NAVEGACION-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a class="navbar-brand" id="el-logo" href="" >DIPP</a>
@@ -29,20 +34,18 @@
             
     <!--DROPDOWN DE USUARIO--> 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
                   <div class="row" style="padding:2px;">
                   <div class="col-4">
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6>Nombre de la persona</h6>
+                    <h6> <?php echo $_SESSION["nombre"];?></h6>
                   </div>
               </div>
-  
-                <a class="dropdown-item" href="">Cambiar Contraseña</a>
-    
-                <a class="dropdown-item" href="">Cerrar Session</a>
+
+                <a class="dropdown-item" href="../../../ajax/cerrar-sesion.php">Cerrar Sesion</a>
               </div>
             </li>
           </ul>
@@ -53,11 +56,13 @@
     <main>
         <div class="row">
         <div class="col-lg-6 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
-            <h1>Creacion de maestro</h1>
+            <h1>Creacion del Programa y coordinador de la misma</h1>
             <select class="form-control" style="margin-bottom:10px" id="">
-                <option value="">Programa de Estudio</option>
+                <option value="">Centro de estudio</option>
             </select>
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre del maestro" required autofocus style="margin-bottom: 10px;">
+            >
+            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre del programa" required autofocus style="margin-bottom: 10px;">
+            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre del coordinador" required autofocus style="margin-bottom: 10px;">
             <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Numero de cuenta a asignar" required autofocus style="margin-bottom: 10px;">
             <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Correo Institucional" required autofocus style="margin-bottom: 10px;">
             <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Contraseña" required autofocus style="margin-bottom: 10px;">
@@ -76,7 +81,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Estas seguro que deseas crear este maestro en el sistema?
+        ¿Estas seguro que deseas crear esta carrera en este centro de estudio ?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Atras</button>
