@@ -1,2 +1,5 @@
 {"usuario":"20161003263","password":"asd.456","tipoUsuario":"dipp" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
-{"usuario":"20161003264","password":"asd.456","tipoUsuario":"dipp" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
+{"usuario":"20161003264","password":"asd.456","tipoUsuario":"coordinador" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
+{"usuario":"M20122","password":"asd.456","nombre":"Lord Servio","tipoUsuario":"docente","carrera":"Ingenieria en Sistemas"}
+{"usuario":"M20121","password":"asd.456","nombre":"Erick Marin","tipoUsuario":"docente","carrera":"Ingenieria en Sistemas"}
+{"usuario":"20161003261","password":"asd.456","nombre":"Kevin Nieto","tipoUsuario":"estudiante","carrera":"Ingenieria en Sistemas"}

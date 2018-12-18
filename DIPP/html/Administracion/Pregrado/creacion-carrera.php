@@ -57,21 +57,25 @@
     <main>
         <div class="row">
         <div class="col-lg-6 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
-            <h1>Creacion de carrera y coordinador de la misma</h1>
-            <select class="form-control" style="margin-bottom:10px" id="">
-                <option value="">Esto lo traera el servidor pero es el centro de estudio</option>
-            </select>
-            <select class="form-control" style="margin-bottom:10px" id="">
-                <option value="">Esto lo traera el servidor pero es la facultad</option>
-            </select>
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre de la carrera" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre del coordinador" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Numero de cuenta a asignar" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Correo Institucional" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Contraseña" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Sueldo" required autofocus style="margin-bottom: 10px;">
-            
-            <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" data-toggle="modal" data-target="#exampleModal">Enviar</button>
+            <form method= "POST"action="">          
+              <h1>Creacion de carrera y coordinador de la misma</h1>
+                <select class="form-control" name="centro" style="margin-bottom:10px" id="slc-centro">
+                    
+                </select>
+                <select class="form-control" name="facultad" style="margin-bottom:10px" id="slc-facultad">
+                   
+                </select>
+                <input type="text" id="inputCuenta formulario" name="carrera" class="form-control" placeholder="Nombre de la carrera" required autofocus style="margin-bottom: 10px;">
+                <input type="text" id="inputCuenta formulario" name="coordinador" class="form-control" placeholder="Nombre del coordinador" required autofocus style="margin-bottom: 10px;">
+                <input type="text" id="inputCuenta formulario" name="usuario" class="form-control" placeholder="Numero de cuenta a asignar" required autofocus style="margin-bottom: 10px;">
+                <input type="text" id="inputCuenta formulario" name="correo" class="form-control" placeholder="Correo Institucional" required autofocus style="margin-bottom: 10px;">
+                <input type="text" id="inputCuenta formulario" name="contraseña" class="form-control" placeholder="Contraseña" required autofocus style="margin-bottom: 10px;">
+                <input type="text" id="inputCuenta formulario" name="sueldo" class="form-control" placeholder="Sueldo" required autofocus style="margin-bottom: 10px;">
+
+
+                <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" data-toggle="modal" data-target="#exampleModal" name="envio">Enviar</button>
+            </form>
+
         </div>
      </div>
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -97,3 +101,94 @@
     <script src="../../../js/jquery-3.3.1.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
 </body>
+<script>
+$(document).ready(function(){
+	console.log("El DOM ha sido cargado, debe cargar todos los tweets e imprimirlos tal y como lo muestrael html estatico");
+	///Peticion AJAX para obtener usuarios
+	$.ajax({
+    url:"../../../ajax/centros.php",
+		method:"GET",
+		dataType:"json",
+		success:function(respuesta){
+			console.log(respuesta);
+			$("#slc-centro").append(`<option value="">-Centros de Estudio-</option>`);
+			for(var i=1; i<respuesta.length;i++)
+				$("#slc-centro").append(`<option  value"${respuesta[i].centro}">${respuesta[i].centro}</option>`);
+		},
+		error:function(error){
+			console.log(error);
+    }
+    
+    });
+});
+$("#slc-centro").change(function(){
+	//Esta funcion se ejecuta cada vez que el usuario selecciona o cambia un elemento de la lista.
+	console.log("Centro seleccionado: " + $("#slc-centro").val());
+  $.ajax({
+    url:"../../../ajax/facultad.php?esto="+$("#slc-centro").val(),
+		method:"GET",
+		dataType:"json",
+		success:function(respuesta){
+           console.log(respuesta);
+      $("#slc-facultad").append(`<option value="">-Facultad-</option>`);
+      for(var i=0; i<respuesta.length;i++)
+		  	$("#slc-facultad").append(`<option  value"${respuesta[i].facultad}">${respuesta[i].facultad}</option>`);
+
+		},
+		error:function(error){
+			console.log(error);
+		}
+	});
+});
+
+</script>
+ <?php 
+    if (isset($_POST["envio"])){ 
+        $guardador = $_POST['facultad'];
+        $centro = $_POST['centro'];
+        $carrera = $_POST['carrera'];
+        $nomb = '../../../data/Centros-de-Estudio/'.$centro.'/'.$guardador.'/'.$carrera;
+        $registrar = array(
+          "nombre" => $_POST["coordinador"],
+          "tipo" =>"coordinador",
+          "usuario" =>  $_POST["usuario"],
+          "password" => $_POST["contraseña"]
+
+        );
+        
+  
+
+        //$registrar["nombre"] =$_POST["coordinador"];
+        //$registrar["tipo"] ="coordinador";
+        //$registrar["usuario"] = $_POST["usuario"];
+        //$registrar["password"] =$_POST["contraseña"];
+        $archivo = fopen("../../../data/usuarios.json","a+");
+        fwrite($archivo, json_encode($registrar)."\n");
+        fclose($archivo);
+
+    
+        if (!is_dir($nomb)) {
+            $creador = mkdir($nomb,0777);
+            $nombre ="../../../data/Centros-de-Estudio/".$centro.".json";
+        
+            if (!$nombre) {
+                $archivo = fopen("../../../data/Centros-de-Estudio/".$centro.'/'.$guardador.".json","w");
+                fclose($archivo);
+                $archivo = fopen("../../../data/Centros-de-Estudio/".$centro.'/'.$guardador.".json","a+");
+                fwrite($archivo, json_encode($_POST) . "\n");
+                fclose($archivo);
+            }else {
+                $archivo = fopen("../../../data/Centros-de-Estudio/".$centro.'/'.$guardador.".json","a+");
+                fwrite($archivo, json_encode($_POST) . "\n");
+                fclose($archivo);
+            }
+            //echo'
+            //  <div class="row">
+            //    <div clas="col-3" style="background-color:green; color:white;">
+            //        Se guardo esta madre
+            //    </div>
+            //  </div>            
+            //';        
+        }
+    }
+?> 

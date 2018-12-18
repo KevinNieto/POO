@@ -1,7 +1,5 @@
 <?php
-    
-    
-    $archivo = fopen($_GET["ubicacion"],"r");
+    $archivo = fopen("../data/Post-grado/programas.json","r");
     while(($linea=fgets($archivo))){
     //Cada linea es texto en formato JSON
     $registros[] = json_decode($linea,true);

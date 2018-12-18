@@ -110,7 +110,6 @@ $("#btn-login").click(function(){
             if (respuesta.estatus == 1){
                 if (respuesta.tipoUsuario=="dipp"){
                         window.location.href = "html/Administracion/DIPP/main-dipp.php";
- 
             
                 }
                 

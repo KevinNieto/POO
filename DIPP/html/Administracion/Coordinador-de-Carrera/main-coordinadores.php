@@ -1,3 +1,8 @@
+<?php 
+    session_start();  
+    if (!isset($_SESSION["usuario"]))
+       header("Location: ../../../no-autorizado.html");//Redireccion con PHP
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,20 +34,18 @@
             
     <!--DROPDOWN DE USUARIO--> 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
                   <div class="row" style="padding:2px;">
                   <div class="col-4">
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6>Nombre de la persona</h6>
+                    <h6> <?php echo $_SESSION["nombre"];?></h6>
                   </div>
               </div>
-  
-                <a class="dropdown-item" href="">Cambiar Contraseña</a>
-    
-                <a class="dropdown-item" href="">Cerrar Session</a>
+
+                <a class="dropdown-item" href="../../../ajax/cerrar-sesion.php">Cerrar Sesion</a>
               </div>
             </li>
           </ul>
@@ -54,12 +57,12 @@
     <h3>Bienvenido a Coordinador</h3>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="creacion-seccion.html">Crear asignatura</a></div>
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="ver-asignaturas.html">Ver asignturas</a></div>
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="creacion-seccion.php">Crear asignatura</a></div>
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="ver-asignaturas.php">Ver asignturas</a></div>
             </div>
             <div class="row">
-                    <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="ver-estudiantes.html">Ver estudiantes</a></div>
-                    <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="ver-maestro.html">Ver profesores</a></div>
+                    <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="ver-estudiantes.php">Ver estudiantes</a></div>
+                    <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="ver-maestro.php">Ver profesores</a></div>
                 </div>
         </div>
     </main>

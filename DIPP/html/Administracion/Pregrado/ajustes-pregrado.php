@@ -66,7 +66,6 @@
             </div>
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" ><a href="centro-de-estudio.php">Crear Centros de Estudio</a></div>
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" ><a href="atencion-solicitudes.php">Atencion de Solictudes</a></div>
                 
             </div>
         </div>

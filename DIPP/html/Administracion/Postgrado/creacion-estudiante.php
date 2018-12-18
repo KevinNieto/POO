@@ -56,26 +56,27 @@
     <main>
         <div class="row">
         <div class="col-lg-6 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
-            <h1>Creacion de estudiante</h1>
-            <select class="form-control" style="margin-bottom:10px" id="">
-                <option value="">Programa de Estudio</option>
-            </select>
-            <select class="form-control" style="margin-bottom:10px" id="">
-                <option value="">-Titulo de grado-</option>
-                <option value="">Licenciatura</option>
-                <option value="">Ingenieria</option>
-                <option value="">Doctor</option>
-            </select>
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre del Estudiante" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Numero de cuenta a asignar" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Correo Institucional" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Correo Personal" required autofocus style="margin-bottom: 10px;">
-            
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Contraseña" required autofocus style="margin-bottom: 10px;">
-            
-            
-            <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" data-toggle="modal" data-target="#exampleModal">Enviar</button>
-        </div>
+             <form action="" method="post">
+              <h1>Creacion de estudiante</h1>
+              <select class="form-control" name="programa" style="margin-bottom:10px" id="slc-centro">
+              </select>
+              <select class="form-control" name="titulo" style="margin-bottom:10px" id="">
+                  <option value="">-Titulo de grado-</option>
+                  <option value="">Licenciatura</option>
+                  <option value="">Ingenieria</option>
+                  <option value="">Doctor</option>
+              </select>
+              <input type="text" id="inputCuenta formulario" class="form-control" name="nombre"placeholder="Nombre del Estudiante" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" class="form-control" name="usuario"placeholder="Numero de cuenta a asignar" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" class="form-control" name="correo"placeholder="Correo Institucional" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" class="form-control" name="indicep" placeholder="Indice del periodo" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" class="form-control" name="indiceg" placeholder="Indice del global" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" class="form-control" name="contrasena"placeholder="Contraseña" required autofocus style="margin-bottom: 10px;">
+
+
+              <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" name="envio">Enviar</button>
+            </form>
+          </div>
      </div>
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -100,3 +101,66 @@
     <script src="../../../js/jquery-3.3.1.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
 </body>
+
+
+</body>
+<script>
+$(document).ready(function(){
+	console.log("El DOM ha sido cargado, debe cargar todos los tweets e imprimirlos tal y como lo muestrael html estatico");
+	///Peticion AJAX para obtener usuarios
+	$.ajax({
+		url:"../../../ajax/programas.php",
+		method:"GET",
+		dataType:"json",
+		success:function(respuesta){
+			console.log(respuesta);
+			$("#slc-centro").append(`<option value="">-Programa-</option>`);
+			for(var i=1; i<respuesta.length;i++)
+				$("#slc-centro").append(`<option  >${respuesta[i].programa}</option>`);
+		},
+		error:function(error){
+			console.log(error);
+    }
+    
+    });
+});
+
+
+</script>
+ <?php 
+    if (isset($_POST["envio"])){ 
+      
+          // $registrar = array(
+          //"usuario" =>  $_POST["usuario"],
+          //"password" => $_POST["contrasena"],
+          //"nombre" => $_POST["nombre"],
+          //"tipoUsuario" =>"estudiantePost",
+          //"programa" => $_POST["programa"],
+          // );
+          //fopen("../../../data/usuarios.json", "a+");
+          //fwrite("../../../data/usuarios.json", json_encode($registrar) . "\n");
+          //fclose("../../../data/usuarios.json");
+          
+          $nombre ="../../../data/Post-grado/estudiantes.json";
+        
+          if (!$nombre) {
+              $archivo = fopen($nombre,"w");
+              fclose($archivo);
+              $archivo = fopen($nombre,"a+");
+              fwrite($archivo, json_encode($_POST) . "\n");
+              fclose($archivo);
+          }else {
+              $archivo = fopen($nombre,"a+");
+              fwrite($archivo, json_encode($_POST) . "\n");
+              fclose($archivo);
+          }
+            //echo'
+            //  <div class="row">
+            //    <div clas="col-3" style="background-color:green; color:white;">
+            //        Se guardo esta madre
+            //    </div>
+            //  </div>            
+            //';        
+        
+    }
+?> 
