@@ -106,13 +106,14 @@ $("#btn-login").click(function(){
         method:"POST",
     
         success:function(respuesta){
+            alert("Entra en la funcion");
             console.log(respuesta);
             if (respuesta.estatus == 1){
-                if (respuesta.tipoUsuario=="dipp"){
-                        window.location.href = "html/Administracion/DIPP/main-dipp.php";
-            
+                if (respuesta.tipoUsuario=="coordinador"){
+                        window.location.href = "html/Administracion/Coordinador-de-carrera/main-coordinadores.php";
+                }else if (respuesta.tipoUsuario=="dipp") {
+                    window.location.href = "html/Administracion/DIPP/main-dipp.php";
                 }
-                
                 
                 //if (respuesta.tipoUsuario=="cajero")
                 //    window.location.href = "cajero.php";//redireccionar

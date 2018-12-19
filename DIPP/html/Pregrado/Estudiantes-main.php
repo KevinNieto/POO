@@ -1,15 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href= "../../img/logo.ico">
 
-    <title>Matricula</title>
+    <title>Area de Pregrado</title>
 
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/custom.css" rel="stylesheet">
     <link href="custom-estudiantes.css" rel="stylesheet">
-
     
 </head>
 <body style="padding: 7rem;">
@@ -39,7 +39,7 @@
                     <h6>Nombre de la persona</h6>
                   </div>
               </div>
-    
+  
                 <a class="dropdown-item" href="">Cambiar Contraseña</a>
     
                 <a class="dropdown-item" href="">Cerrar Session</a>
@@ -51,46 +51,18 @@
       </nav>
     </header>
     <main>
-    <h3>PROGRAMACION ACADEMICA DEL PERIODO</h3>
-      <div style="background-color:rgb(255, 255, 255, .9);padding: 5px "> 
-        <div class="row" style="margin:15px;padding:  5px; background-color: #FEB6B7; border-color: red ;border-radius: 5px;">
-            <p>Para realizar una peticion de apertura de seccion, debe avocarse a la oficiona del jefe de departamento correspondiente a la asignatura selecionada</p>
+    <h3>Servicio al Estudiante </h3>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="historial.php">Historial academico</a></div>
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="matricula.php">Adicionar</a></div>
+            </div>
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="calificaciones.php">Ver calificaciones del periodo</a></div>      
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="forma03.php">Forma 03</a></div>
+            </div>
         </div>
-        <div class="row" style="margin: 20px;">
-            <table border="0" class="col-12" style="border:none">
-                
-                <tr>
-                    <th>Departamento</th>
-                    <th>Asignatura</th> 
-                    <th>Dias</th>
-                    <th>Seccion</th>
-                    <th>Hora inicial</th>
-                    <th>Hora final</th>
-                </tr>
-                <tr>
-                    <td>Ingenieria en sistemas</td>
-                    <td>PROGRAMACION ORIENTADA A OBJETOS</td> 
-                    <td>12345</td>
-                    <td>1500</td>
-                    <td>1500</td>
-                    <td>1600</td>
-                  </tr>
-                  <tr>  
-                        <td>Ingenieria en sistemas</td>
-                        <td>SISTEMAS OPERATIVOS I</td> 
-                        <td>12345</td>
-                        <td>1300</td>
-                        <td>1300</td>
-                        <td>1400</td>
-    
-                  </tr>
-            </table>
-        </div>
-    </div>  
-        
-
-        
     </main>
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
 </body>

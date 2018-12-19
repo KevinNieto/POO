@@ -30,11 +30,11 @@
               <a class="nav-link" href="../../index.html">Pagina Principal <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="../logins/login-pregrado.html">Sistema de pregrado <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../../login.html">Sistema de pregrado <span class="sr-only">(current)</span></a>
             </li><li class="nav-item active">
               <a class="nav-link" href="../Postgrado/index-postgrado.html">Sistema de postgrado  <span class="sr-only">(current)</span></a>
             </li><li class="nav-item active">
-              <a class="nav-link" href="../logins/login-adm.html">Administracion  <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../../login.html">Administracion  <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           </div>  

@@ -1,7 +1,7 @@
 <?php 
-    session_start();  
-    if (!isset($_SESSION["usuario"]))
-       header("Location: ../../../no-autorizado.html");//Redireccion con PHP
+    if (!isset($_COOKIE["usuario"])){
+        header("Location: no-autorizado.html");//Redireccion con PHP
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +41,7 @@
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6> <?php echo $_SESSION["nombre"];?></h6>
+                    <h6> <?php echo $_COOKIE["tipoUsuario"]."<br>".$_COOKIE["usuario"];?></h6>
                   </div>
               </div>
 
@@ -57,13 +57,10 @@
     <h3>Bienvenido a Coordinador</h3>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="creacion-seccion.php">Crear asignatura</a></div>
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="ver-asignaturas.php">Ver asignturas</a></div>
+                <div class="col-xl-11 col-lg-11 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="creacion-seccion.php">Crear asignatura</a></div>
+                
             </div>
-            <div class="row">
-                    <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="ver-estudiantes.php">Ver estudiantes</a></div>
-                    <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="ver-maestro.php">Ver profesores</a></div>
-                </div>
+       
         </div>
     </main>
     <script src="../../../js/jquery-3.3.1.min.js"></script>
