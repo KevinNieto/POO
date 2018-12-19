@@ -1,3 +1,8 @@
+<?php 
+    if (!isset($_COOKIE["usuario"])){
+        header("Location: no-autorizado.html");//Redireccion con PHP
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,20 +34,18 @@
             
     <!--DROPDOWN DE USUARIO--> 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
                   <div class="row" style="padding:2px;">
                   <div class="col-4">
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6>Nombre de la persona</h6>
+                    <h6> <?php echo $_COOKIE["tipoUsuario"]."<br>".$_COOKIE["usuario"];?></h6>
                   </div>
               </div>
-  
-                <a class="dropdown-item" href="">Cambiar Contraseña</a>
-    
-                <a class="dropdown-item" href="">Cerrar Session</a>
+
+                <a class="dropdown-item" href="../../../ajax/cerrar-sesion.php">Cerrar Sesion</a>
               </div>
             </li>
           </ul>
@@ -53,18 +56,19 @@
     <main>
         <div class="row">
         <div class="col-lg-6 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
-            <h1>Creacion de Secciones</h1>
-            <select class="form-control" style="margin-bottom:10px" id="">
-                <option value="">Centro de estudio</option>
-            </select>
-            <select class="form-control" style="margin-bottom:10px" id="">
-                    <option value="">Maestro</option>
-                </select>
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Seccion" required autofocus style="margin-bottom: 10px;">
-            <input type="text" id="inputCuenta formulario" class="form-control" placeholder="Nombre de la clase" required autofocus style="margin-bottom: 10px;">
-            
-            <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" data-toggle="modal" data-target="#exampleModal">Enviar</button>
-        </div>
+            <form action="" method="post">
+              <h1>Creacion de Secciones</h1>
+              <select class="form-control" name="centro" style="margin-bottom:10px" id="slc-centro">
+              </select>
+              <input type="text" id="inputCuenta formulario" name="carrera" class="form-control" placeholder="Carrera" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="docente" class="form-control" placeholder="Docente" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="seccion" class="form-control" placeholder="Seccion" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="nombreClase" class="form-control" placeholder="Nombre de la clase" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="uv" class="form-control" placeholder="Unidades Valorativas" required autofocus style="margin-bottom: 10px;">
+
+              <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" name="envio">Enviar</button>
+            </form>
+          </div>
      </div>
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -89,3 +93,52 @@
     <script src="../../../js/jquery-3.3.1.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
 </body>
+
+<script>
+$(document).ready(function(){
+	console.log("El DOM ha sido cargado, debe cargar todos los tweets e imprimirlos tal y como lo muestrael html estatico");
+	///Peticion AJAX para obtener usuarios
+	$.ajax({
+		url:"../../../ajax/centros.php",
+		method:"GET",
+		dataType:"json",
+		success:function(respuesta){
+			console.log(respuesta);
+			$("#slc-centro").append(`<option value="">-Centros de Estudio-</option>`);
+			for(var i=1; i<respuesta.length;i++)
+				$("#slc-centro").append(`<option  >${respuesta[i].centro}</option>`);
+		},
+		error:function(error){
+			console.log(error);
+    }
+    
+    });
+});
+
+
+</script>
+ <?php 
+    if (isset($_POST["envio"])){ 
+        $nombre = '../../../data/secciones.json;';
+        
+            if (!$nombre) {
+                $archivo = fopen($nombre.".json","w");
+                fclose($archivo);
+                $archivo = fopen($nombre.".json","a+");
+                fwrite($archivo, json_encode($_POST) . "\n");
+                fclose($archivo);
+            }else {
+                $archivo = fopen($nombre.".json","a+");
+                fwrite($archivo, json_encode($_POST) . "\n");
+                fclose($archivo);
+            }
+            //echo'
+            //  <div class="row">
+            //    <div clas="col-3" style="background-color:green; color:white;">
+            //        Se guardo esta madre
+            //    </div>
+            //  </div>            
+            //';        
+        }
+  
+?> 
