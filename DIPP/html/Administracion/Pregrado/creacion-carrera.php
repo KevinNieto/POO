@@ -1,7 +1,7 @@
 <?php 
-    session_start();  
-    if (!isset($_SESSION["usuario"]))
-        header("Location: no-autorizado.html");//Redireccion con PHP
+  if (!isset($_COOKIE["usuario"])){
+          header("Location: ../../../no-autorizado.html");//Redireccion con PHP
+  }
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 <header>
         <!--INICIO DE LA BARRA DE NAVEGACION-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" id="el-logo" href="" >DIPP</a>
+          <a class="navbar-brand" id="el-logo" href="ajustes-pregrado.php" >DIPP</a>
        
     
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6> <?php echo $_SESSION["nombre"];?></h6>
+                    <h6> <?php echo $_COOKIE["tipoUsuario"]."<br>".$_COOKIE["usuario"];?></h6>
                   </div>
               </div>
 

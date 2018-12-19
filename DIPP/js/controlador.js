@@ -95,7 +95,7 @@
 //           break;
 //        }
 //
-//
+//$archivo.lenght=0;
 //   }
 
 $("#btn-login").click(function(){
@@ -113,6 +113,12 @@ $("#btn-login").click(function(){
                         window.location.href = "html/Administracion/Coordinador-de-carrera/main-coordinadores.php";
                 }else if (respuesta.tipoUsuario=="dipp") {
                     window.location.href = "html/Administracion/DIPP/main-dipp.php";
+                }else if (respuesta.tipoUsuario=="estudiante") {
+                    window.location.href = "html/Pregrado/Estudiantes-main.php";
+                }else if (respuesta.tipoUsuario=="estudiantePost") {
+                    window.location.href = "html/Postgrado/Estudiantes-main.php";
+                }else if (respuesta.tipoUsuario=="coordinadoPost") {
+                    window.location.href = "html/Administracion/Coordinador-de-post/main-coordinadores.php";
                 }
                 
                 //if (respuesta.tipoUsuario=="cajero")

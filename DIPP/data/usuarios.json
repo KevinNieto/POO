@@ -1,6 +1,6 @@
-{"usuario":"20161003263","password":"asd.456","tipoUsuario":"dipp" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
-{"usuario":"Coordinador","password":"asd.456","tipoUsuario":"coordinadorPost" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
-{"usuario":"20161003264","password":"asd.456","nombre": "Kevin Nieto","tipoUsuario":"coordinador" , "carrera":"Ingenieria en Sistemas"}
-{"usuario":"M20122","password":"asd.456","nombre":"Lord Servio","tipoUsuario":"docente","carrera":"Ingenieria en Sistemas"}
-{"usuario":"M20121","password":"asd.456","nombre":"Erick Marin","tipoUsuario":"docente","carrera":"Ingenieria en Sistemas"}
-{"usuario":"20161003261","password":"asd.456","nombre":"Kevin Nieto","tipoUsuario":"estudiante","carrera":"Ingenieria en Sistemas"}
+{"usuario":"admin","password":"asd.456","tipoUsuario":"dipp" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
+{"usuario":"admin2","password":"asd.456","tipoUsuario":"coordinadorPost" , "nombre": "Kevin Nieto" , "imagen": "img-form.jpg"}
+{"usuario":"admin3","password":"asd.456","tipoUsuario":"coordinador","nombre": "Kevin Nieto" , "carrera":"Ingenieria en Sistemas"}
+{"usuario":"admin4","password":"asd.456","tipoUsuario":"docente","nombre":"Kevin Nieto","carrera":"Ingenieria en Sistemas"}
+{"usuario":"admin5","password":"asd.456","tipoUsuario":"estudiante","nombre":"Kevin Nieto","carrera":"Ingenieria en Sistemas"}
+

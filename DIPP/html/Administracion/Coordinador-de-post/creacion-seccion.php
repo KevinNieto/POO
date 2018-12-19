@@ -1,7 +1,7 @@
 <?php 
-  if (!isset($_COOKIE["usuario"])){
-          header("Location: ../../../no-autorizado.html");//Redireccion con PHP
-  }
+    if (!isset($_COOKIE["usuario"])){
+        header("Location: .../../../no-autorizado.html");//Redireccion con PHP
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,10 +18,10 @@
     
 </head>
 <body style="padding: 7rem; background-color: white!important">
-<header>
+    <header>
         <!--INICIO DE LA BARRA DE NAVEGACION-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" id="el-logo" href="ajustes-postgrado.php" >DIPP</a>
+          <a class="navbar-brand" id="el-logo" href="main-coordinadores.php" >DIPP</a>
        
     
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,20 +56,18 @@
     <main>
         <div class="row">
         <div class="col-lg-6 col-xs-12 " style="position: absolute ;margin-left: auto; margin-right: auto;">
-            <form method="POST"action="">
-                <h1>Creacion del Programa y coordinador de la misma</h1>
-                <select class="form-control" style="margin-bottom:10px" name="centro" id="slc-centro">
-                    
-                </select>
-                
-                <input type="text" id="inputCuenta formulario" class="form-control" name="programa" placeholder="Nombre del programa" required autofocus style="margin-bottom: 10px;">
-                <input type="text" id="inputCuenta formulario" class="form-control" name="nombre" placeholder="Nombre del coordinador" required autofocus style="margin-bottom: 10px;">
-                <input type="text" id="inputCuenta formulario" class="form-control" name="cuenta" placeholder="Numero de cuenta a asignar" required autofocus style="margin-bottom: 10px;">
-                <input type="text" id="inputCuenta formulario" class="form-control" name="correo" placeholder="Correo Institucional" required autofocus style="margin-bottom: 10px;">
-                <input type="text" id="inputCuenta formulario" class="form-control" name="contrasena" placeholder="Contraseña" required autofocus style="margin-bottom: 10px;">
-                <input type="text" id="inputCuenta formulario" class="form-control" name="sueldo" placeholder="Sueldo" required autofocus style="margin-bottom: 10px;"> 
-                <button class="class-6 btn btn-lg btn-primary btn-block color-boton"  name="envio" id="btn-login" type="submit">Enviar</button>
-            </form>        
+            <form action="" method="post">
+              <h1>Creacion de Secciones</h1>
+              <select class="form-control" name="centro" style="margin-bottom:10px" id="slc-centro">
+              </select>
+              <input type="text" id="inputCuenta formulario" name="carrera" class="form-control" placeholder="Carrera" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="docente" class="form-control" placeholder="Docente" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="seccion" class="form-control" placeholder="Seccion" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="nombreClase" class="form-control" placeholder="Nombre de la clase" required autofocus style="margin-bottom: 10px;">
+              <input type="text" id="inputCuenta formulario" name="uv" class="form-control" placeholder="Unidades Valorativas" required autofocus style="margin-bottom: 10px;">
+
+              <button class="class-6 btn btn-lg btn-primary btn-block color-boton" id="btn-login" type="submit" name="envio">Enviar</button>
+            </form>
           </div>
      </div>
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,7 +80,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Estas seguro que deseas crear esta carrera en este centro de estudio ?
+        ¿Estas seguro que deseas crear esta seccion en el sistema?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Atras</button>
@@ -121,32 +119,19 @@ $(document).ready(function(){
 </script>
  <?php 
     if (isset($_POST["envio"])){ 
-        $guardador = $_POST['programa'];
-        $centro = $_POST['centro'];
-        $nomb = '../../../data/Post-grado/'.$guardador;
-        $registrar = array(
-          
-          "usuario" =>  $_POST["cuenta"],
-          "password" => $_POST["contrasena"],
-          "nombre" => $_POST["nombre"],
-          "tipoUsuario" =>"coordinadorPost",
-          "programa" => $_POST["programa"],
-        );
-
-          
-          $nombre ="../../../data/Post-grado/programas.json";
+        $nombre = '../../../data/seccionespost.json;';
         
-          if (!$nombre) {
-              $archivo = fopen($nombre,"w");
-              fclose($archivo);
-              $archivo = fopen($nombre,"a+");
-              fwrite($archivo, json_encode($_POST) . "\n");
-              fclose($archivo);
-          }else {
-              $archivo = fopen($nombre,"a+");
-              fwrite($archivo, json_encode($_POST) . "\n");
-              fclose($archivo);
-          }
+            if (!$nombre) {
+                $archivo = fopen($nombre.".json","w");
+                fclose($archivo);
+                $archivo = fopen($nombre.".json","a+");
+                fwrite($archivo, json_encode($_POST) . "\n");
+                fclose($archivo);
+            }else {
+                $archivo = fopen($nombre.".json","a+");
+                fwrite($archivo, json_encode($_POST) . "\n");
+                fclose($archivo);
+            }
             //echo'
             //  <div class="row">
             //    <div clas="col-3" style="background-color:green; color:white;">
@@ -154,6 +139,6 @@ $(document).ready(function(){
             //    </div>
             //  </div>            
             //';        
-        
-    }
+        }
+  
 ?> 

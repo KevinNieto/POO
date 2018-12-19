@@ -1,7 +1,7 @@
 <?php 
-    session_start();  
-    if (!isset($_SESSION["usuario"]))
-        header("Location: no-autorizado.html");//Redireccion con PHP
+  if (!isset($_COOKIE["usuario"])){
+          header("Location: ../../../no-autorizado.html");//Redireccion con PHP
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +41,7 @@
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6> <?php echo $_SESSION["nombre"];?></h6>
+                    <h6> <?php echo $_COOKIE["tipoUsuario"]."<br>".$_COOKIE["usuario"];?></h6>
                   </div>
               </div>
 

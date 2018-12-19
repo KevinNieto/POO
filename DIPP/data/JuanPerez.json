@@ -2,3 +2,6 @@
 {"codigo":"MM311","clase":"Calculo 2","seccion":"0703","horaEntrada":"0700" ,"horaSalida":"0700" , "dias": "LMMJV" , "edificio": "B2", "aula": "402", "uv": "4", "periodo": "3" }
 {"codigo":"GG01","clase":"Guitarra 1","seccion":"0703","horaEntrada":"0700" ,"horaSalida":"0700" , "dias": "LMMJV" , "edificio": "B2", "aula": "402", "uv": "4", "periodo": "3" }
 {"codigo":"MM314","clase":"Vectores","seccion":"0703","horaEntrada":"0700" ,"horaSalida":"0700" , "dias": "LMMJV" , "edificio": "B2", "aula": "402", "uv": "4", "periodo": "3" }
+{"codigo":"Is500","clase":"Bases","seccion":"1500","horaEntrada":"1500","horaSalida":"1600","dias":"LMMJV","eficio":"B2","aula":"201","uv":"5","periodo":"3","envio":""}
+{"codigo":"Is500","clase":"Bases","seccion":"1500","horaEntrada":"1500","horaSalida":"1600","dias":"LMMJV","eficio":"B2","aula":"201","uv":"5","periodo":"3","envio":""}
+

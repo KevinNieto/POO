@@ -1,6 +1,6 @@
 <?php 
     if (!isset($_COOKIE["usuario"])){
-        header("Location: no-autorizado.html");//Redireccion con PHP
+        header("Location: ../../../no-autorizado.html");//Redireccion con PHP
     }
 ?>
 <!DOCTYPE html>
@@ -18,10 +18,10 @@
     
 </head>
 <body style="padding: 7rem; background-color: white!important">
-    <header>
+<header>
         <!--INICIO DE LA BARRA DE NAVEGACION-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" id="el-logo" href="" >DIPP</a>
+          <a class="navbar-brand" id="el-logo" href="main-coordinadores.php" >DIPP</a>
        
     
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">

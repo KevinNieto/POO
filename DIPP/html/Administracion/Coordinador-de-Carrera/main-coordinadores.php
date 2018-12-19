@@ -1,6 +1,6 @@
 <?php 
     if (!isset($_COOKIE["usuario"])){
-        header("Location: no-autorizado.html");//Redireccion con PHP
+        header("Location: ../../../no-autorizado.html");//Redireccion con PHP
     }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     
 </head>
 <body style="padding: 7rem;">
-    <header>
+<header>
         <!--INICIO DE LA BARRA DE NAVEGACION-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a class="navbar-brand" id="el-logo" href="" >DIPP</a>

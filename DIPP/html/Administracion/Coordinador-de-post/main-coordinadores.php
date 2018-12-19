@@ -1,3 +1,8 @@
+<?php 
+  if (!isset($_COOKIE["usuario"])){
+          header("Location: ../../../no-autorizado.html");//Redireccion con PHP
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +12,9 @@
 
     <title>Area de Pregrado</title>
 
-    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../css/custom.css" rel="stylesheet">
-    <link href="../../../Pregrado/custom-estudiantes.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/custom.css" rel="stylesheet">
+    <link href="../../Pregrado/custom-estudiantes.css" rel="stylesheet">
     
 </head>
 <body style="padding: 7rem;">
@@ -29,20 +34,18 @@
             
     <!--DROPDOWN DE USUARIO--> 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
                   <div class="row" style="padding:2px;">
                   <div class="col-4">
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6>Nombre de la persona</h6>
+                    <h6> <?php echo $_COOKIE["tipoUsuario"]."<br>".$_COOKIE["usuario"];?></h6>
                   </div>
               </div>
-    
-                <a class="dropdown-item" href="">Cambiar Contraseña</a>
-    
-                <a class="dropdown-item" href="">Cerrar Session</a>
+
+                <a class="dropdown-item" href="../../../ajax/cerrar-sesion.php">Cerrar Sesion</a>
               </div>
             </li>
           </ul>
@@ -51,16 +54,15 @@
       </nav>
     </header>
     <main>
-    <h3>Servicio al Estudiante </h3>
+    <h3>Bienvenido a Coordinador</h3>
         <div class="container-fluid">
-            <div class="row" style="margin-left:100px;">
-                <div class="col-xl-3 col-lg-3 col-md-none col-sm-none" id="estilos-cuadros" ><a href="historial-post.html">Historial academico</a></div>
-                <div class="col-xl-3 col-lg-3 col-md-none col-sm-none" id="estilos-cuadros"><a href="matricula/menu-matricula.html">Matricula</a></div>
-                <div class="col-xl-3 col-lg-3 col-md-none col-sm-none" id="estilos-cuadros"><a href="calificaciones.html">Ver calificaciones del periodo</a></div>
+            <div class="row">
+                <div class="col-xl-11 col-lg-11 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="creacion-seccion.php">Crear asignatura</a></div>
+                
             </div>
-            
+       
         </div>
     </main>
-    <script src="../../../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
 </body>
