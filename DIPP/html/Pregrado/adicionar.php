@@ -2,12 +2,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href= "../../../img/logo.ico">
+    <link rel="icon" href= "../../img/logo.ico">
 
     <title>Matricula</title>
 
-    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../css/custom.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/custom.css" rel="stylesheet">
 
     
 </head>
@@ -28,11 +28,11 @@
                     
             <!--DROPDOWN DE USUARIO--> 
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/tuerca.png" width="30"></a>
+                      <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../img/tuerca.png" width="30"></a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
                           <div class="row" style="padding:2px;">
                           <div class="col-4">
-                            <img src="../../../img/user.png" width="50">
+                            <img src="../../img/user.png" width="50">
                           </div>
                           <div class="col-8">
                             <h6>Nombre de la persona</h6>

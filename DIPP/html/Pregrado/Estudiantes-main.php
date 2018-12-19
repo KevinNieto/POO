@@ -55,7 +55,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="historial.php">Historial academico</a></div>
-                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="matricula.php">Adicionar</a></div>
+                <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros"><a href="adicionar.php">Adicionar</a></div>
             </div>
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-none col-sm-none" id="estilos-cuadros" style="margin-left:100px;"><a href="calificaciones.php">Ver calificaciones del periodo</a></div>      

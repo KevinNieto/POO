@@ -56,58 +56,15 @@
         <div class="row" style="margin:25px;">
             <h5>Informacion General</h5>
         </div>
-        <div class="row" style="margin: 20px;">
-            <!--<div class="col-2" style=" background-image: url(../../../img/img-form.jpg);background-repeat: no-repeat; background-size:150px; height: 180px;">
-            </div>-->
-            
-            <div class="col-6">
-                <p><b>Cuenta:</b> 20161003263  </p>
-                <p><b>Nombre:</b> Kevin Alexis Nieto</p>
-                <p><b>Carrera:</b> Ingenieria en Sistemas</p>
-            </div>
-            <div class="col-6">
-              <p><b>Centro:</b> Ciudad Universitaria</p>
-              <p><b>Indice global</b> 75</p>
-              <p><b>Indice del periodo</b> 79</p>
-            </div>
-        </div>
+      <div id="informacion">
+       
+      </div>
         <div class="row" style="margin: 25px;">
             <h5>Historial</h5>
         </div>
         <div class="row" style="margin: 20px;">
-            <table border="0" class="col-12" style="border:none">
+            <table border="0" class="col-12" style="border:none" id="cuadro">
                 
-                <tr>
-                    <th>Cod.</th>
-                    <th>Asignatura</th> 
-                    <th>UV</th>
-                    <th>Seccion</th>
-                    <th>Año</th>
-                    <th>Periodo</th>
-                    <th>Calificacion</th>
-                    <th>OBS</th>
-                </tr>
-                <tr>
-                    <td>IS410</td>
-                    <td>PROGRAMACION ORIENTADA A OBJETOS</td> 
-                    <td>5</td>
-                    <td>1500</td>
-                    <td>2018</td>
-                    <td>3</td>
-                    <td>100</td>
-                    <td>APR</td>
-                  </tr>
-                  <tr>  
-                    <td>IS410</td>
-                    <td>PROGRAMACION ORIENTADA A OBJETOS</td> 
-                    <td>5</td>
-                    <td>1500</td>
-                    <td>2018</td>
-                    <td>3</td>
-                    <td>100</td>
-                    <td>APR</td>
-    
-                  </tr>
             </table>
         </div>
     </div>  
@@ -115,6 +72,71 @@
 
         
     </main>
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
 </body>
+<script>
+  $(document).ready(function(){
+	console.log("El DOM ha sido cargado, debe cargar todos los tweets e imprimirlos tal y como lo muestrael html estatico");
+	///Peticion AJAX para obtener usuarios
+	$.ajax({
+		url:"../../ajax/informacion.php",
+		method:"GET",
+		dataType:"json",
+		success:function(respuesta){
+			console.log(respuesta);
+			$("#informacion").append(`<div class="row">
+                                        <div class="col-2" style=" background-image: url("${respuesta[0].imagen}");background-repeat: no-repeat; background-size:150px; height: 180px;">
+                                        </div>
+                                        <div class="col-6">
+                                        <p><b>Cuenta:</b> ${respuesta[0].cuenta} </p>
+                                        <p><b>Nombre:</b> ${respuesta[0].nombre}</p>
+                                        <p><b>Carrera:</b> ${respuesta[0].carrera}</p>
+                                        </div>
+                                        <div class="col-4">
+                                          <p><b>Centro:</b> ${respuesta[0].centro}</p>
+                                          <p><b>Año:</b>2018</p>
+                                        </div>
+                                     </div>`);
+		},
+		error:function(error){
+			console.log(error);
+    }
+    
+    });
+    $.ajax({
+		url:"../../ajax/historial.php",
+		method:"GET",
+		dataType:"json",
+		success:function(respuesta){
+			console.log(respuesta);
+			$("#cuadro").append(` <tr>
+                              <th>Cod.</th>
+                              <th>Asignatura</th> 
+                              <th>UV</th>
+                              <th>Seccion</th>
+                              <th>Año</th>
+                              <th>Periodo</th>
+                              <th>Calificacion</th>
+                              <th>OBS</th>
+                          </tr>`);
+            for(var i=0; i<respuesta.length;i++)
+				$("#cuadro").append(`<tr>
+                                          <td>${respuesta[i].codigo}</td>
+                                          <td>${respuesta[i].clase}</td> 
+                                          <td>${respuesta[i].uv}</td>
+                                          <td>${respuesta[i].seccion}</td>
+                                          <td>2018</td>
+                                          <td>${respuesta[i].periodo}</td>
+                                          <td>${respuesta[i].calificacion}</td>
+                                          <td>${respuesta[i].obs}</td>  
+                                        </tr>`);
+		
+		},
+		error:function(error){
+			console.log(error);
+    }
+    
+    });
+});
+</script>
