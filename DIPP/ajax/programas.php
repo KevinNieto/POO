@@ -1,4 +1,5 @@
 <?php
+    
     $archivo = fopen("../data/Post-grado/programas.json","r");
     while(($linea=fgets($archivo))){
     //Cada linea es texto en formato JSON
