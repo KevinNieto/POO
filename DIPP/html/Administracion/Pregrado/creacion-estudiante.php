@@ -41,7 +41,7 @@
                     <img src="../../../img/user.png" width="50">
                   </div>
                   <div class="col-8">
-                    <h6> <?php echo $_COOKIE["tipoUsuario"]."<br>".$_COOKIE["usuario"];?></h6>
+                    <h6> <?php echo $_SESSION["usuario"];  ?></h6>
                   </div>
               </div>
 

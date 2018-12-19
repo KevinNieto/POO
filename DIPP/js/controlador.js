@@ -101,7 +101,7 @@
 $("#btn-login").click(function(){
     $.ajax({
         url:"ajax/login.php",
-        data:"usuario="+$("#Cuenta").val() + "&password="+$("#Password").val(),
+        data:"usuario="+$("#cuenta").val() + "&password="+$("#password").val(),
         dataType:"json",
         method:"POST",
     
@@ -109,7 +109,7 @@ $("#btn-login").click(function(){
             alert("Entra en la funcion");
             console.log(respuesta);
             if (respuesta.estatus == 1){
-                if (respuesta.tipoUsuario=="coordinador"){
+                if (respuesta.tipoUsuario == "coordinador"){
                         window.location.href = "html/Administracion/Coordinador-de-carrera/main-coordinadores.php";
                 }else if (respuesta.tipoUsuario=="dipp") {
                     window.location.href = "html/Administracion/DIPP/main-dipp.php";

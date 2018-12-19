@@ -40,13 +40,11 @@
                             <img src="../../img/user.png" width="50">
                           </div>
                           <div class="col-8">
-                            <h6>Nombre de la persona</h6>
+                            <h6><?php echo $_SESSION["usuario"];  ?></h6>
                           </div>
                       </div>
             
-                        <a class="dropdown-item" href="">Cambiar Contraseña</a>
-            
-                        <a class="dropdown-item" href="">Cerrar Session</a>
+                        <a class="dropdown-item" href="../../ajax/cerrar-sesion.php">Cerrar Session</a>
                       </div>
                     </li>
                   </ul>
